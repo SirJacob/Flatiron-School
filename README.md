@@ -1,54 +1,64 @@
 # Ruby Notes
 
-> Use 'puts' to print
+## Useful Commands
 
-> Use '#{var_name}' to inject vars into strings
-current_president = "Barack Obama"
-puts "In 2016, the president was #{current_president}."
+`irb` to start the ruby interpreter
 
-> use_snake_case notCamelCase
-There is strong convention among Rubyists to use what is known as snake case this_is_an_example_of_snake_case words are seperated by underscores. This is opposed to camel case thisIsAnExampleOfCamelCase where upcased characters indicate word breaks.
+### General
 
-> Vars can't start with a number, include punctuation, or spaces
-A Ruby variable cannot start with a number, be a Ruby reserved word, or have punctuation or space characters.
+| Command | Use | Java Equivalent |
+| --- | --- | --- |
+| `puts arg` | print something to the console | `System.out.print(arg);`
+| `#{arg}` | insert a var into a string | `String.fomat(str,insert);`
+| `.length` | gets how big or long something is | Same
+| `.reverse` | reverses the order of something | `new StringBuilder(str).reverse().toString();` & `ArrayUtils.reverse(array);`
+| `.new` | empty instantiation | `new` keyword
+| `.new(arg)` | instantiation | `Type name = arg;`
+| `.class` | get the data type of a var | `.getClass().getSimpleName();`
 
-> You can change the data type of a var on command
-Ruby is what is known as a dynamically typed language.
 
-> Uses dot notation
-Ex: str.upcase, str.downcase, str.length, str.reverse, String.new, String.new("hello")
+### String Class
 
-> Pass by value not refrence language
+| Command | Use |
+| --- | --- |
+| `.upcase` | convert str to all upper case |
+| `.downcase` | convert str to all lower case |
 
-> Two types of numbers
-1) Fixed nums/whole numbers
-2) floats (round down to nearest whole int .floor | .round to nearest whole num up or down | .ceil road up to nearest whole int)
+### Float Class
+- Any number with a decimal is called a Float
 
-> Array syntax
-It is possible to create an array that contains disparate data types, but that is generally discouraged. It's best to keep your arrays populated with only one kind of element.
+| Command | Use |
+| --- | --- |
+| `.ceil` | round _up_ to nearest whole int |
+| `.round` | round _up or down_ to nearest whole int |
+| `.floor` | round _down_ to nearest whole int |
 
-array_name.push(arg1,arg2,etc) to add multiple items to the end of an array
-famous_cats << "nala cat"	use the shovel operator to add an item to the end of an array
-array_name.unshift(arg1,arg2,etc)	adds elements to the front of the array
+### Arrays
+- It is possible to create an array that contains different data types, but that is generally discouraged.
+- Elements are accessed via index; the first element is at index 0.
 
-array_name.inspect		returns the array as a string
+| Command | Use |
+| --- | --- |
+| `<<` | Shovel Operator: Adds _an_ element to the _end_ of an array
+| `.push(args)` | same as the Shovel Operator, but can _add multipal elements_
+| `.unshift(args)` | to _add elements_ to the _front_ of an array
+| `.inspect` | returns the array as a String
+| `.shift` | removes and returns the first item
+| `.pop` | removes and returns the last element
+| `.include?(arg)` | checks if the array contains an element
+| `.sort` | sorts the array
 
-array_name.shift 	removes and returns first item
-array_name.pop	returns and removes last element
+## General Notes
+- Ruby uses_snake_case, unlike Java's camelCase
+- Var names can't start with a number, have punctuation, be a reserved Ruby keyword, or include a space
+- Dynamically Typed Lang: Data types of vars change as needed
+- Uses dot notation like Java
+- Passes by value, not refrence
+- A whole number is called a fixed number (Fixnum)
+- A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 
-["hello", "world"] | Array.new
-[5, 100, 234, 7, 2].sort
-[1, 2, 3].reverse
-["Red", "Yellow", "Green"][0] would return "Red"
-
-array_name.reverse
-array_name.include?(arg)
-
-> Hash syntax (HashMap in Java)
-{"hello" => "world", "orange" => "peal"}
-Hash.new | To set custom return on non-existant key: Hash.new(arg) or hash_name.default = arg
-to access values in a hash: hash_name[hash_key]
-
-> A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
-
-> Use .class to get the data type of a var
+### Hash Class Notes
+- Example of syntax: `{"hello" => "world", "orange" => "peal"}`
+- Values are accessed from the key. Ex: `hash_name[key]` returns the value associated to the key
+- `Hash.new(arg)` or `.default = arg` is used to set what is returned when attempting to access a non-existant key
+- HashMap is the Java equivalent
