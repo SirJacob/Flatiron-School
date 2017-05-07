@@ -16,7 +16,7 @@ A Ruby variable cannot start with a number, be a Ruby reserved word, or have pun
 Ruby is what is known as a dynamically typed language.
 
 > Uses dot notation
-Ex: str.upcase, str.downcase, str.length, str.reverse
+Ex: str.upcase, str.downcase, str.length, str.reverse, String.new, String.new("hello")
 
 > Pass by value not refrence language
 
@@ -25,13 +25,30 @@ Ex: str.upcase, str.downcase, str.length, str.reverse
 2) floats (round down to nearest whole int .floor | .round to nearest whole num up or down | .ceil road up to nearest whole int)
 
 > Array syntax
-["hello", "world"]
+It is possible to create an array that contains disparate data types, but that is generally discouraged. It's best to keep your arrays populated with only one kind of element.
+
+array_name.push(arg1,arg2,etc) to add multiple items to the end of an array
+famous_cats << "nala cat"	use the shovel operator to add an item to the end of an array
+array_name.unshift(arg1,arg2,etc)	adds elements to the front of the array
+
+array_name.inspect		returns the array as a string
+
+array_name.shift 	removes and returns first item
+array_name.pop	returns and removes last element
+
+["hello", "world"] | Array.new
+[5, 100, 234, 7, 2].sort
+[1, 2, 3].reverse
+["Red", "Yellow", "Green"][0] would return "Red"
+
+array_name.reverse
+array_name.include?(arg)
 
 > Hash syntax (HashMap in Java)
 {"hello" => "world", "orange" => "peal"}
 Hash.new | To set custom return on non-existant key: Hash.new(arg) or hash_name.default = arg
 to access values in a hash: hash_name[hash_key]
 
-> A symbol is a representation of a piece of data represented with a : before the identifier.
+> A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 
 > Use .class to get the data type of a var
