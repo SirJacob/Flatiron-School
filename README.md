@@ -1,8 +1,9 @@
-# Flatiron-School Notes
+# Flatiron School Notes
 
 ### Notes on Segments
 
-[Ruby Notes](https://github.com/SirJacob/Khet/tree/testing)
+[Bash Notes](https://github.com/SirJacob/Khet/tree/bash)
+[Ruby Notes](https://github.com/SirJacob/Khet/tree/ruby)
 
 ### Completed Segments of the Course
 - [ ] Ruby
