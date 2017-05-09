@@ -48,7 +48,7 @@
 | `.round` | round _up or down_ to nearest whole int |
 | `.floor` | round _down_ to nearest whole int |
 
-### Arrays
+### Arrays (Collections)
 - It is possible to create an array that contains different data types, but that is generally discouraged.
 - Elements are accessed via index; the first element is at index 0.
 
@@ -63,15 +63,27 @@
 | `.include?(arg)` | checks if the array contains an element
 | `.sort` | sorts the array
 
-#### Fixnum Arrays
-- [Breakdown of Methods for Fixnum Arrays](https://learn.co/lessons/ruby-boolean-enumerables)
+#### Boolean Enumerables
+- Loops through the block, updating the var within the pipes to the next element after each execution
+- [Breakdown of Boolean Enumerables](https://learn.co/lessons/ruby-boolean-enumerables)
 
-| Method | Example |
-| --- | --- |
-| `.all?` |
-| `.none?` |
-| `.any?` |
-| `.include?(num)` |
+`.all?` returns true if _all_ of the iterations returned `true`
+```ruby
+[1,3].all? { |number| number.odd? } #=> true
+```
+
+`.none?` returns true if _none_ of the iterations returned `true`
+```ruby
+[1,3].none? { |i| i.even? } #=> true
+```
+
+`.any?` returns true if `any` of the iterations returned `true`
+```ruby
+[1,2,100].any? { |i| i > 99 } #=> true
+```
+
+#### Search Enumerables
+- [Breakdown of Search Enumerables](https://learn.co/lessons/ruby-search-enumerators)
 
 ## Notes
 
@@ -82,7 +94,7 @@
 - Uses dot notation like Java
 - Passes by value, not reference
 - A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
-- Everything is default true. Exceptions include `nil` and `false`.
+- Everything is default true. Exceptions include `nil` and `false`
 
 ### Hash Class
 - Example of syntax: `{"hello" => "world", "orange" => "peal"}`
