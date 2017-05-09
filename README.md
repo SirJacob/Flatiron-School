@@ -12,6 +12,7 @@
 | `.new` | empty instantiation | `new` keyword
 | `.new(arg)` | instantiation | `Type name = arg;`
 | `.class` | get the data type of a var | `.getClass().getSimpleName();`
+| `.is_a?(Type)` | checks the data type against a given data type
 
 ### Console
 
@@ -84,6 +85,21 @@
 
 #### Search Enumerables
 - [Breakdown of Search Enumerables](https://learn.co/lessons/ruby-search-enumerators)
+
+`.select` returns an _array_ containing _all elements_ that makes the block `true`
+```ruby
+[1,2,3,4,5].select { |number| number.even? } #=> [2,4]
+```
+
+`.detect` or `.find` returns the _first element_ that makes the block `true`
+```ruby
+[1,2,3].detect { |i| i.odd? } #=> 1
+```
+
+`.reject` returns an _array_ containing _all elements_ that makes the block `false`
+```ruby
+[1,2].reject { |i| i.even? } #=> [1]
+```
 
 ## Notes
 
