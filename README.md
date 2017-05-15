@@ -111,6 +111,7 @@
 - Passes by value, not reference
 - A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 - Everything is default true. Exceptions include `nil` and `false`
+- You can define a constant by starting the identifier with a capital letter.
 
 ### Hash Class
 - Example of syntax: `{"hello" => "world", "orange" => "peal"}`
