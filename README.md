@@ -6,13 +6,18 @@
 
 | Method | Use | Java Equivalent |
 | --- | --- | --- |
-| `#{arg}` | insert a var into a string | `String.format(str,insert);`
-| `.length` | gets how big or long something is | Same
+| `#{1+1}` | insert result or var into a string | `String.format("%s",insertStr);`
+| `.length` | gets how big or long something is | Same or `.length()`
 | `.reverse` | reverses the order of something | `new StringBuilder(str).reverse().toString();` & `ArrayUtils.reverse(array);`
 | `.new` | empty instantiation | `new` keyword
 | `.new(arg)` | instantiation | `Type name = arg;`
 | `.class` | get the data type of a var | `.getClass().getSimpleName();`
-| `.is_a?(Type)` | checks the data type against a given data type
+| `.is_a?(Type)` | checks the data type against a given data type | `instanceof` keyword
+| `object_id` | object's identifier in memory | 
+| `.methods` | returns all methods in a class | Reflection
+| `.instance_variable_set(:@var_name, arg)` | used on an instance of a class to _set_ an instance var | Setter methods
+| `.instance_variable_get(:@var_name)` | used on an instance of a class to _get_ an instance var | Getter methods
+| `.nil?` | checks if something is equal to nil | `arg == null;`
 
 ### Console
 
@@ -104,14 +109,18 @@
 ## Notes
 
 ### General
-- Ruby uses_snake_case, unlike Java's camelCase
-- Var names can't start with a number, have punctuation, be a reserved Ruby keyword, or include a space
-- Dynamically Typed Language: Data types of vars change as needed
 - Uses dot notation like Java
 - Passes by value, not reference
-- A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 - Everything is default true. Exceptions include `nil` and `false`
+
+### Variables
+- Var names can't start with a number, have punctuation, be a reserved Ruby keyword, or include a space
 - You can define a constant by starting the identifier with a capital letter.
+- Instance variables are prefixed with `@`
+- `attr_accessor :var_name` generates a _getter and setter_ for that var
+- `attr_reader :var_name` generates a _getter_ for that var
+- `attr_writer :var_name` generates a _setter_ for that var
+- A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 
 ### Hash Class
 - Example of syntax: `{"hello" => "world", "orange" => "peal"}`
@@ -215,6 +224,8 @@ end
 | double-bang operator | Nickname for the use of a double not. Ex: `!!true` => true
 | edge case | refers to scenarios that might occur and we can anticipate, but that are unlikely to be the norm
 | helper method | handles a discrete unit of behavior and is used inside of other methods to carry out a larger task
+| Ruby Object Notation | consists of the name of the class and the location in memory. Ex: #<ClassName:0x007fc52c2cc588>
+| Dynamically Typed Language | data types of vars change as needed
 
 
 ### Reserved/Keywords
@@ -225,6 +236,7 @@ end
 | `def` | used to _define_ methods
 | `end` | used to end structures. Java equivalent of `}`
 | `break` | stops executing the inner-most loop
+| `class` | used to define a class; prefixes the class name
 
 
 ### Folders
@@ -235,3 +247,9 @@ end
 | `config/` | Configeration: code required to initialize the environment
 | `lib/` | Library: code containing methods and classes
 | `spec/` or `test/` | Tests: code used to run tests
+
+## Style Conventions
+- [A community-driven Ruby coding style guide](https://github.com/bbatsov/ruby-style-guide/blob/master/README.md)
+- Use snake_case for symbols, methods, variables, file names, and directory names.
+- Use CamelCase for classes and modules. Acronyms maintain their case.
+- Potentially dangerous methods (methods that modify self or the arguments) should end with an `!` _if there exists a safe version of that dangerous method._
