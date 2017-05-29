@@ -7,7 +7,7 @@
 | Method | Use | Java Equivalent |
 | --- | --- | --- |
 | `#{1+1}` | insert result or var into a string | `String.format("%s",insertStr);`
-| `.length` | gets how big or long something is | Same or `.length()`
+| `.length`, `.size`, and `.count` | gets how big or long something is | `.length`, `.length()`, and `.size`
 | `.reverse` | reverses the order of something | `new StringBuilder(str).reverse().toString();` & `ArrayUtils.reverse(array);`
 | `.new` | empty instantiation | `new` keyword
 | `.new(arg)` | instantiation | `Type name = arg;`
@@ -68,6 +68,11 @@
 | `.pop` | removes and returns the last element
 | `.include?(arg)` | checks if the array contains an element
 | `.sort` | sorts the array
+| `.empty?` | check whether an array contains any elements at all
+| `.delete_at(index)` | deletes an element from the array at the index given
+| `.insert(index,args)` | inserts elements into the array at the given index
+| `.compact` optional `!` | removes nil values from the array
+| `.uniq` optional `!` | removes duplicate elements from the array
 
 #### Boolean Enumerables
 - Loops through the block, updating the var within the pipes to the next element after each execution
@@ -142,6 +147,44 @@ Example of method declaration syntax:
 def greeting(output) #Method Identifier and Argument Identifiers
   puts output #Method Body
 end #Method Closing
+```
+
+Example of using an `=` in method identifier:
+```ruby
+class Foo
+  def foo=(x)
+    puts "OK: x=#{x}"
+  end
+end
+f = Foo.new
+f.foo = 123 # => 123
+# OK: x=123
+```
+- [Explanation](https://stackoverflow.com/a/5399010)
+- Works as a setter method
+- Looks like a variable, even though it's a method
+
+#### `initialize` Method
+- Called constructor methods in Java
+
+```ruby
+    class Dog
+      def initialize(breed) #constructor
+        @breed = breed
+      end
+     
+      def breed=(breed) #setter
+        @breed = breed
+      end
+     
+      def breed #getter
+        @breed
+      end
+    end
+```
+```ruby
+    lassie = Dog.new("Collie")
+    lassie.breed #=> "Collie"
 ```
 
 #### Optional Arguments
@@ -229,6 +272,7 @@ end
 | helper method | handles a discrete unit of behavior and is used inside of other methods to carry out a larger task
 | Ruby Object Notation | consists of the name of the class and the location in memory. Ex: #<ClassName:0x007fc52c2cc588>
 | Dynamically Typed Language | data types of vars change as needed
+| Syntactic Sugar | syntax within a programming language that is designed to make things easier to read or express
 
 
 ### Reserved/Keywords
