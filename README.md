@@ -117,10 +117,13 @@
 - Var names can't start with a number, have punctuation, be a reserved Ruby keyword, or include a space
 - You can define a constant by starting the identifier with a capital letter.
 - Instance variables are prefixed with `@`
+- A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
+
+#### attr_
+- [attr\_ explanation](https://stackoverflow.com/a/5046915)
 - `attr_accessor :var_name` generates a _getter and setter_ for that var
 - `attr_reader :var_name` generates a _getter_ for that var
 - `attr_writer :var_name` generates a _setter_ for that var
-- A symbol is a representation of a piece of data represented with a : before the identifier. They refer to an area of memory; this is different from, for example, strings, which take up new areas of memory every time they are used.
 
 ### Hash Class
 - Example of syntax: `{"hello" => "world", "orange" => "peal"}`
